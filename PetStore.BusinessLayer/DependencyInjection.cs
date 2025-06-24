@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using PetStore.DataLayer;
+using PetStore.DataLayer.Common;
 
 namespace PetStore.BusinessLayer;
 
@@ -13,5 +14,8 @@ public static class DependencyInjection
         {
             options.UseSqlServer("ConnectionStringName=PetStoreDb");
         });
+
+
+        builder.Services.AddScoped<IPetStoreDbContext, PetStoreDbContext>();
     }
 }
