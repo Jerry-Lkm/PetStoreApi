@@ -4,6 +4,7 @@ using PetStore.DataLayer.Common;
 
 namespace PetStore.DataLayer.DataContext;
 
+[Table("User")]
 public class User : BaseEntity
 {
     [Column("id")]
@@ -31,7 +32,7 @@ public class User : BaseEntity
     public string Phone { get; set; } = null!;
 
     [Column("status")]
-    public string Status { get; set; } = null!;
+    public int Status { get; set; }
 
     [Timestamp]
     public byte[] RowVersion { get; set; } = null!;

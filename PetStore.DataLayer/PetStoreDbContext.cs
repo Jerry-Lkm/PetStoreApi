@@ -4,8 +4,9 @@ using PetStore.DataLayer.DataContext;
 
 namespace PetStore.DataLayer;
 
-public class PetStoreDbContext : DbContext
+public partial class PetStoreDbContext : DbContext
 {
+    public PetStoreDbContext() { }
     public PetStoreDbContext(DbContextOptions<PetStoreDbContext> options)
         : base(options)
     {
@@ -19,6 +20,11 @@ public class PetStoreDbContext : DbContext
     public DbSet<User> Users { get; set; } = null!;
     public DbSet<UserStatus> UserStatuses { get; set; } = null!;
 
+    // Uncomment and configure the connection string as needed
+    // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    // {
+    //     optionsBuilder.UseSqlServer("Server={server},{port};Database={database};User Id={user};Password={password};TrustServerCertificate=True;MultipleActiveResultSets=True;Encrypt=False;");
+    // }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -47,7 +53,7 @@ public class PetStoreDbContext : DbContext
             .HasOne(o => o.Pet)
             .WithMany(p => p.Orders)
             .HasForeignKey(o => o.PetId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.Entity<Pet>()
             .HasOne(p => p.PetStatus)
@@ -57,9 +63,9 @@ public class PetStoreDbContext : DbContext
 
         modelBuilder.Entity<PetCategory>()
             .HasMany(pc => pc.Pets)
-            .WithOne()
+            .WithOne(o => o.PetCategory)
             .HasForeignKey(p => p.Category)
-            .OnDelete(DeleteBehavior.SetNull);
+            .OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.Entity<User>()
             .HasOne(u => u.UserStatus)

@@ -2,7 +2,7 @@ namespace PetStore.DataLayer.Common.Enum;
 
 public enum OrderStatusEnum
 {
-    Placed,
+    Placed = 1,
     Processing,
     Shipped
 }

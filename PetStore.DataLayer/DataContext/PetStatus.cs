@@ -3,6 +3,7 @@ using PetStore.DataLayer.Common;
 
 namespace PetStore.DataLayer.DataContext;
 
+[Table("PetStatus")]
 public class PetStatus : BaseEntity
 {
     [Column("id")]

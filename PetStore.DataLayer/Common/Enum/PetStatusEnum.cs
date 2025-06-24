@@ -2,7 +2,7 @@ namespace PetStore.DataLayer.Common.Enum;
 
 public enum PetStatusEnum
 {
-    Available,
+    Available = 1,
     Pending,
     Sold
 }

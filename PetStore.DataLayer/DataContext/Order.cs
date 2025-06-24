@@ -4,6 +4,7 @@ using PetStore.DataLayer.Common;
 
 namespace PetStore.DataLayer.DataContext;
 
+[Table("Order")]
 public class Order : BaseEntity
 {
     [Column("id")]
