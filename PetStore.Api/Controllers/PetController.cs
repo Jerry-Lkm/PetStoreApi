@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using PetStore.BusinessLayer.Dto;
 using PetStore.BusinessLayer.Services.Pet.Commands;
 using PetStore.BusinessLayer.Services.Pet.Queries;
-using PetStore.BusinessLayer.Utils;
+using PetStore.DataLayer.Common;
 
 namespace PetStore.Api.Controllers;
 

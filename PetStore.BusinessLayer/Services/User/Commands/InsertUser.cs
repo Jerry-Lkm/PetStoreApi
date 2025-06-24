@@ -1,5 +1,5 @@
-using PetStore.BusinessLayer.Utils;
 using PetStore.BusinessLayer.Dto;
+using PetStore.DataLayer.Common;
 
 namespace PetStore.BusinessLayer.Services.User.Commands;
 

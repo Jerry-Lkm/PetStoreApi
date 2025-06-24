@@ -1,6 +1,6 @@
 using PetStore.BusinessLayer.Dto;
-using PetStore.BusinessLayer.Utils;
 using Microsoft.EntityFrameworkCore;
+using PetStore.DataLayer.Common;
 
 namespace PetStore.BusinessLayer.Services.User.Queries;
 

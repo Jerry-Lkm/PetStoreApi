@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PetStore.DataLayer.DataContext;
 
-namespace PetStore.BusinessLayer.Utils;
+namespace PetStore.DataLayer.Common;
 
 public interface IPetStoreDbContext
 {

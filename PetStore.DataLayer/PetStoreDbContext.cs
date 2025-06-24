@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using PetStore.DataLayer.Common;
 using PetStore.DataLayer.Common.Enum;
 using PetStore.DataLayer.DataContext;
 
 namespace PetStore.DataLayer;
 
-public partial class PetStoreDbContext : DbContext
+public partial class PetStoreDbContext : DbContext, IPetStoreDbContext
 {
     public PetStoreDbContext() { }
     public PetStoreDbContext(DbContextOptions<PetStoreDbContext> options)
